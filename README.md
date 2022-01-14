@@ -1,11 +1,11 @@
-# JuliusHuttunen.github.io
-
 ## Komputer Store
 ### Programmed for the Noroff Java Fullstack Bootcamp
 
 1. Wireframe
+
 The site is based on the basic wireframe provided in the project specifications.
 2. Technologies
+
 The site is powered by Javascript, web elements are created in HTML and the styling was finished in CSS.
 3. The completed functionalities
 - Balance, loan and pay amounts interact with each other
