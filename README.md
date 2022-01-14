@@ -4,9 +4,11 @@
 1. Wireframe
 
 The site is based on the basic wireframe provided in the project specifications.
+
 2. Technologies
 
 The site is powered by Javascript, web elements are created in HTML and the styling was finished in CSS.
+
 3. The completed functionalities
 - Balance, loan and pay amounts interact with each other
 - Get a loan, Bank, Work, Pay loan and Buy now buttons finished with the required functionalities and constraints
