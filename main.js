@@ -47,7 +47,7 @@ function getLoan() {
     if (request > balance * 2) {
         window.alert("Loan amount too high!");
     }
-    else if (request <= 0) {
+    else if (request <= 0 || !Number.isInteger(request)) {
         window.alert("Enter a valid loan amount!")
     }
     else if (hasLoan) {
