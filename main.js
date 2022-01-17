@@ -15,6 +15,7 @@ const balanceElement = document.getElementById("balance");
 const loanElement = document.getElementById("loan");
 
 const onLoad = () => {
+    console.log("DOM content loaded")
     payElement.innerHTML = formatNumbers.format(pay);
     balanceElement.innerHTML = formatNumbers.format(balance);
     loanElement.innerHTML = formatNumbers.format(loan);
