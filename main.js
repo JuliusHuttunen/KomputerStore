@@ -4,7 +4,7 @@ let loan = 0;
 let pay = 0;
 let hasLoan = false;
 let hasInteracted = false;
-let price = 200;
+let price = 0;
 
 //Laptop display elements
 const laptopsElement = document.getElementById("laptops");
@@ -14,14 +14,17 @@ const laptopDescElement = document.getElementById("description");
 const laptopPriceElement = document.getElementById("price");
 let laptops = [];
 
+//Format amounts to NOK
+const formatNumbers = new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' });
+
 //Pay loan button starts hidden
 let x = document.getElementById("payloan");
 x.style.display = "none";
 
 function updateValues() {
-    document.getElementById("balance").innerHTML = balance + " kr";
-    document.getElementById("loan").innerHTML = loan + " kr";
-    document.getElementById("pay").innerHTML = pay + " kr";
+    document.getElementById("balance").innerHTML = formatNumbers.format(balance);
+    document.getElementById("loan").innerHTML = formatNumbers.format(loan);
+    document.getElementById("pay").innerHTML = formatNumbers.format(pay);
 }
 
 //BANK
@@ -148,7 +151,7 @@ const addLaptops = (laptops) => {
 
     //Price
     const laptopPrice = laptops[0].price;
-    laptopPriceElement.appendChild(document.createTextNode(laptopPrice + " kr"));
+    laptopPriceElement.appendChild(document.createTextNode(formatNumbers.format(laptopPrice)));
 }
 
 //Add laptops to option list for the dropdown
@@ -199,7 +202,7 @@ const handleLaptopMenuChange = e => {
 
     //Price
     const laptopPrice = selectedLaptop.price;
-    laptopPriceElement.appendChild(document.createTextNode(laptopPrice + " kr"));
+    laptopPriceElement.appendChild(document.createTextNode(formatNumbers.format(laptopPrice)));
 }
 
 function payForLaptop() {
