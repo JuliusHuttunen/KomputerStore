@@ -3,6 +3,8 @@ let balance = 0;
 let loan = 0;
 let pay = 0;
 let hasLoan = false;
+let hasInteracted = false;
+let price = 200;
 
 //Laptop display elements
 const laptopsElement = document.getElementById("laptops");
@@ -63,7 +65,7 @@ function moveToBank() {
             loan -= pay * 0.1;
             balance += pay * 0.9;
             //If the loan goes to minus, add that to bank
-            if(loan < 0){
+            if (loan < 0) {
                 balance -= loan;
             }
             //Loan paid in full
@@ -122,6 +124,31 @@ fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
 //Loop the laptops array and feed them to dropdown options
 const addLaptops = (laptops) => {
     laptops.forEach(i => addLaptop(i));
+
+    //SHOW THE INFORMATION OF THE FIRST LAPTOP ON LOAD
+    //Specs
+    const laptopSpecifications = laptops[0].specs;
+    //For each specification, add a <li> element to list
+    laptopSpecifications.forEach(function (item, index) {
+        laptopSpecElement = document.createElement("li");
+        laptopSpecElement.appendChild(document.createTextNode(item, index));
+        specsElement.appendChild(laptopSpecElement);
+    });
+    const laptopImage = 'https://noroff-komputer-store-api.herokuapp.com/' + laptops[0].image;
+    //Assign images
+    document.getElementById("laptopimage").setAttribute("src", laptopImage);
+    document.getElementById("laptopimage").setAttribute("alt", "laptopImage");
+    //Name
+    const laptopName = laptops[0].title;
+    laptopNameElement.appendChild(document.createTextNode(laptopName));
+
+    //Description
+    const laptopDesc = laptops[0].description;
+    laptopDescElement.appendChild(document.createTextNode(laptopDesc));
+
+    //Price
+    const laptopPrice = laptops[0].price;
+    laptopPriceElement.appendChild(document.createTextNode(laptopPrice + " kr"));
 }
 
 //Add laptops to option list for the dropdown
@@ -133,11 +160,13 @@ const addLaptop = (laptop) => {
 }
 
 const handleLaptopMenuChange = e => {
+    hasInteracted = true;
     //Flush the previous information on every change
     specsElement.innerHTML = "";
     laptopNameElement.innerHTML = "";
     laptopDescElement.innerHTML = "";
     laptopPriceElement.innerHTML = "";
+
     //selectedLaptop omits const or let, so is a global variable (can be accessed later)
     selectedLaptop = laptops[e.target.selectedIndex];
 
@@ -155,7 +184,10 @@ const handleLaptopMenuChange = e => {
     //Assign images
     document.getElementById("laptopimage").setAttribute("src", laptopImage);
     document.getElementById("laptopimage").setAttribute("alt", "laptopImage");
-    document.getElementById("laptopimage").setAttribute("onerror", "this.onerror=null;this.src='./assets/5.jpg';");
+    //Correcting the image error
+    if (selectedLaptop.id == 5) {
+        document.getElementById("laptopimage").setAttribute("onerror", "this.onerror=null;this.src='https://noroff-komputer-store-api.herokuapp.com/assets/images/5.png';");
+    }
 
     //Name
     const laptopName = selectedLaptop.title;
@@ -171,8 +203,11 @@ const handleLaptopMenuChange = e => {
 }
 
 function payForLaptop() {
-    //selectedLaptop is a global variable from the previous function
-    let price = selectedLaptop.price;
+
+    if (hasInteracted) {
+        //selectedLaptop is a global variable from the previous function
+        price = selectedLaptop.price;
+    }
     //If the user has enough balance, pay for laptop
     if (price <= balance) {
         balance -= price;
@@ -187,4 +222,3 @@ function payForLaptop() {
 
 //Handle the option change
 laptopsElement.addEventListener("change", handleLaptopMenuChange);
-laptopsElement.addEventListener("click", handleLaptopMenuChange);
