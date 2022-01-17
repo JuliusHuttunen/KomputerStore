@@ -27,11 +27,13 @@ function updateValues() {
 //Get loan. It is approved if it is not over twice the bank amount
 function getLoan() {
     const request = Number(window.prompt("Request the amount for loan:", ""));
-    if(request > balance * 2){
+    if (request > balance * 2) {
         window.alert("Loan amount too high!");
-        
     }
-    else if(hasLoan){
+    else if (request <= 0) {
+        window.alert("Enter a valid loan amount!")
+    }
+    else if (hasLoan) {
         window.alert("You have an unpaid loan!");
     }
     else {
@@ -49,17 +51,21 @@ function getLoan() {
 
 //WORK
 function moveToBank() {
-    if(hasLoan){
-        if(loan > pay * 0.1){
-        //Pay loan (10%)
-        loan -= pay * 0.1;
-        //Rest to bank balance
-        balance += pay * 0.9;
-        pay = 0;
+    if (hasLoan) {
+        if (loan > pay * 0.1) {
+            //Pay loan (10%)
+            loan -= pay * 0.1;
+            //Rest to bank balance
+            balance += pay * 0.9;
+            pay = 0;
         }
-        else{
+        else {
             loan -= pay * 0.1;
             balance += pay * 0.9;
+            /* //If the loan goes to minus, add that to bank
+            if(loan < 0){
+                balance -= loan;
+            } */
             //Loan paid in full
             loan = 0;
             pay = 0;
@@ -71,7 +77,7 @@ function moveToBank() {
         //Update!
         updateValues();
     }
-    else{
+    else {
         //All to bank balance
         balance += pay;
         pay = 0;
@@ -89,7 +95,7 @@ function addPay() {
 
 //Pay loan
 function payLoan() {
-    if(pay >= loan){
+    if (pay >= loan) {
         pay -= loan;
         loan = 0;
         hasLoan = false;
@@ -109,9 +115,9 @@ function payLoan() {
 
 //Fetch laptop information
 fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
-.then(response => response.json())
-.then(data => laptops = data)
-.then(laptops => addLaptops(laptops));
+    .then(response => response.json())
+    .then(data => laptops = data)
+    .then(laptops => addLaptops(laptops));
 
 //Loop the laptops array and feed them to dropdown options
 const addLaptops = (laptops) => {
@@ -138,7 +144,7 @@ const handleLaptopMenuChange = e => {
     //Specs
     const laptopSpecifications = selectedLaptop.specs;
     //For each specification, add a <li> element to list
-    laptopSpecifications.forEach(function(item,index) {
+    laptopSpecifications.forEach(function (item, index) {
         laptopSpecElement = document.createElement("li");
         laptopSpecElement.appendChild(document.createTextNode(item, index));
         specsElement.appendChild(laptopSpecElement);
@@ -168,13 +174,13 @@ function payForLaptop() {
     //selectedLaptop is a global variable from the previous function
     let price = selectedLaptop.price;
     //If the user has enough balance, pay for laptop
-    if(price <= balance){
+    if (price <= balance) {
         balance -= price;
         //Update!
         updateValues();
         window.alert("Congrats! You are now the owner of this laptop!");
     }
-    else{
+    else {
         window.alert("You don't have enough balance to afford this laptop.");
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,67 +11,79 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>Komputer Store</h1>
         </div>
         <div class="tools">
-        <div class="bank">
-            <h2>Banker</h2>
-            <div class="balancecontainer">
-            <h3>Balance</h3>
-            <p id = "balance">0 kr</p>
-        </div>
-        <div class="loancontainer">
-            <h3>Loan</h3>
-            <p id = "loan">0 kr</p>
-        </div>
-            <div id="getloan" onclick=getLoan()><p>Get a loan</p></div>
-            <div class="popup">
+            <div class="bank">
+                <h2>Banker</h2>
+                <div class="balancecontainer">
+                    <h3>Balance</h3>
+                    <p id="balance">0 kr</p>
+                </div>
+                <div class="loancontainer">
+                    <h3>Loan</h3>
+                    <p id="loan">0 kr</p>
+                </div>
+                <div id="getloan" onclick=getLoan()>
+                    <p>Get a loan</p>
+                </div>
+                <div class="popup">
+                </div>
+            </div>
+            <div class="work">
+                <h2>Work</h2>
+                <div class="paycontainer">
+                    <h3>Pay</h3>
+                    <p id="pay">0 kr</p>
+                </div>
+                <div class="payloancontainer">
+                    <div id="payloan" onclick=payLoan()>
+                        <p>Pay Loan</p>
+                    </div>
+                </div>
+                <div class="btncontainer">
+                    <div id="bank" onclick=moveToBank()>
+                        <p>Bank</p>
+                    </div>
+                    <div id="work" onclick=addPay()>
+                        <p>Work</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="laptop">
+                <h2>Laptops</h2>
+                <select id="laptops" name="laptops">
+                </select>
+                <h3>Features:</h3>
+                <ul id="specs"></ul>
             </div>
         </div>
-        <div class="work">
-            <h2>Work</h2>
-            <div class="paycontainer">
-                <h3>Pay</h3>
-                <p id = "pay">0 kr</p>
-            </div>
-            <div class="payloancontainer">
-                <div id="payloan" onclick=payLoan()><p>Pay Loan</p></div>
-            </div>
-            <div class="btncontainer">
-            <div id="bank" onclick=moveToBank()><p>Bank</p></div>
-            <div id="work" onclick=addPay()><p>Work</p></div>
-        </div>
-        
-        
-        </div>
-        <div class="laptop">
-            <h2>Laptops</h2>
-            <select id="laptops" name="laptops">
-            </select>
-            <h3>Features:</h3>
-            <ul id="specs"></ul>
-        </div>
-    </div>
-        
+
         <div class="showcase">
             <div class="imgcontainer">
                 <img id="laptopimage">
             </div>
-            
+
             <div class="namedesccontainer">
                 <h2 id="name"></h2>
                 <p id="description"></p>
             </div>
             <div class="buycontainer">
                 <h3 id="price">0 kr</h3>
-            <div id="buy" onclick=payForLaptop()><p>Buy now</p></div>
-        </div>
+                <div id="buy" onclick=payForLaptop()>
+                    <p>Buy now</p>
+                </div>
+            </div>
         </div>
         <div class="footer"></div>
     </div>
 </body>
-<script src = "main.js"></script>
+<script src="main.js"></script>
+
 </html>
