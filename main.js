@@ -6,6 +6,20 @@ let hasLoan = false;
 let hasInteracted = false;
 let price = 0;
 
+//Format amounts to NOK
+const formatNumbers = new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' });
+
+//Get pay, loan, bank elements and initialize 
+const payElement = document.getElementById("pay");
+const balanceElement = document.getElementById("balance");
+const loanElement = document.getElementById("loan");
+
+const onLoad = () => {
+    payElement.innerHTML = formatNumbers.format(pay);
+    balanceElement.innerHTML = formatNumbers.format(balance);
+    loanElement.innerHTML = formatNumbers.format(loan);
+}
+
 //Laptop display elements
 const laptopsElement = document.getElementById("laptops");
 const specsElement = document.getElementById("specs");
@@ -13,9 +27,6 @@ const laptopNameElement = document.getElementById("name");
 const laptopDescElement = document.getElementById("description");
 const laptopPriceElement = document.getElementById("price");
 let laptops = [];
-
-//Format amounts to NOK
-const formatNumbers = new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' });
 
 //Pay loan button starts hidden
 let x = document.getElementById("payloan");
@@ -225,3 +236,4 @@ function payForLaptop() {
 
 //Handle the option change
 laptopsElement.addEventListener("change", handleLaptopMenuChange);
+document.addEventListener("DOMContentLoaded", onLoad);
