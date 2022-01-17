@@ -62,10 +62,10 @@ function moveToBank() {
         else {
             loan -= pay * 0.1;
             balance += pay * 0.9;
-            /* //If the loan goes to minus, add that to bank
+            //If the loan goes to minus, add that to bank
             if(loan < 0){
                 balance -= loan;
-            } */
+            }
             //Loan paid in full
             loan = 0;
             pay = 0;
