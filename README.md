@@ -1,5 +1,5 @@
 ## Komputer Store
-#### Programmed for the Noroff Java Fullstack Bootcamp
+Programmed for the Noroff Java Fullstack Bootcamp
 
 ### ...For all of your computing needs!
 
