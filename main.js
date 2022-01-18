@@ -4,7 +4,7 @@ let loan = 0;
 let pay = 0;
 let hasLoan = false;
 let hasInteracted = false;
-let price = 0;
+let price = 200;
 
 //Format amounts to NOK
 const formatNumbers = new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' });
