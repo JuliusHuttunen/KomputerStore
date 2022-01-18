@@ -3,6 +3,8 @@
 
 ### ...For all of your computing needs!
 
+# Program Description
+
 ## 1. Wireframe
 
 The site is based on the basic wireframe provided in the project specifications.
