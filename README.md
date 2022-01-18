@@ -2,7 +2,7 @@
 
 Programmed for the Noroff Java Fullstack Bootcamp
 
-[The webpage is hosted at GitHub pages(https://juliushuttunen.github.io)
+[The webpage is hosted at GitHub pages](https://juliushuttunen.github.io)
 
 ### ...For all of your computing needs!
 
