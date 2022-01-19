@@ -6,31 +6,17 @@ A website built upon HTML, styled with CSS and powered by Javascript. It was pro
 
 ## Table of Contents
 
-- [Install](#install)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
-- [Contributing](#contributing)
 - [License](#license)
-
-## Install
-
-```
-```
 
 ## Usage
 
-```
-```
+The website is deployed at [https://juliushuttunen.github.io/](Github pages.)
 
 ## Maintainers
 
 [@JuliusHuttunen](https://github.com/JuliusHuttunen)
-
-## Contributing
-
-
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
