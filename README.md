@@ -12,7 +12,7 @@ A website built upon HTML, styled with CSS and powered by Javascript. It was pro
 
 ## Usage
 
-The website is deployed at [https://juliushuttunen.github.io/](Github pages.)
+The website is deployed at [Github pages.](https://juliushuttunen.github.io/)
 
 ## Maintainers
 
