@@ -13,7 +13,8 @@ A website built upon HTML, styled with CSS and powered by Javascript. It was pro
 
 ## Usage
 
-The website is deployed at [Github pages.](https://juliushuttunen.github.io/)
+The website will be deployed to Heroku (or similar hosting service) soon. In the meantime, the project can be
+downloaded as a zip and ran locally.
 
 ## Description
 
