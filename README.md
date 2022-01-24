@@ -13,7 +13,7 @@ A website built upon HTML, styled with CSS and powered by Javascript. It was pro
 
 ## Usage
 
-The website is deployed at (Heroku.)[https://noroff-komputer-store.herokuapp.com/index.html]
+The website is deployed at [Heroku.](https://noroff-komputer-store.herokuapp.com/index.html)
 
 ## Description
 
