@@ -13,8 +13,7 @@ A website built upon HTML, styled with CSS and powered by Javascript. It was pro
 
 ## Usage
 
-The website will be deployed to Heroku (or similar hosting service) soon. In the meantime, the project can be
-downloaded as a zip and ran locally.
+The website is deployed at (Heroku.)[https://noroff-komputer-store.herokuapp.com/index.html]
 
 ## Description
 
